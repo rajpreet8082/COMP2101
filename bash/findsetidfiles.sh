@@ -1,4 +1,4 @@
-0
+
 
 
 
@@ -21,7 +21,7 @@
 
 echo "Setuid files:"
 echo "============="
-find -aBG /-type f -executable -perm -4000 -ls 2>/dev/null |ls -lh| sort -nr | head -12
+find /home/rajpreet8082 -type f -exec du -h {} + | sort -hr | head -12
 echo ""
 
 # for the task, add
