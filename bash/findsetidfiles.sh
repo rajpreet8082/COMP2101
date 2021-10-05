@@ -21,9 +21,10 @@
 
 echo "Setuid files:"
 echo "============="
+find /-type f -executable -perm -4000 -ls 2>/dev/null | sort -k 5
+echo "Biggest 12 Files"
+echo "============="
 find /home/rajpreet8082 -type f -exec du -h {} + | sort -hr | head -12
-echo ""
-
 # for the task, add
 # commands to display a title
 # commands to make a list of the 12 biggest files
