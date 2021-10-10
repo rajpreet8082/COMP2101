@@ -8,7 +8,7 @@
 # RAJPREET KAUR
 
 # Get the current hostname using the hostname command and save it in a variable
-hname='hostname'
+hname=`hostname`
 
 # Tell the user what the current hostname is in a human friendly way
 echo '============================'
@@ -33,7 +33,7 @@ echo $newhostname
 #     tell the user you did that
 #e.g. sed -i "s/$oldname/$newname/" /etc/hosts
 echo '============================='
-sed -i "s/$hname/$newhostname/" /etc/hosts && echo 'Tried to change old Hostname to New Host Name By changing /etc/hosts'
+sudo sed -i "s/$hname/$newhostname/" /etc/hosts && echo 'Tried to change old Hostname to New Host Name By changing /etc/hosts'
 
 # If that hostname is not the current hostname, change it using the hostnamectl command and
 #     tell the user you changed the current hostname and they should reboot to make sure the new name takes full effect
@@ -45,7 +45,7 @@ fi
 
 #For Verification
 echo '==============================='
-echo 'Now Hostname: ' 'hostname'
+echo 'Now Hostname: ' `hostname`
 echo '==============================='
 
 
